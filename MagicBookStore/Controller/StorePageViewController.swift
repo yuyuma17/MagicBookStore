@@ -10,9 +10,20 @@ import UIKit
 
 class StorePageViewController: UIViewController {
 
+    @IBOutlet weak var levelOneMagic: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        levelOneMagic.createBorder()
     }
 
     
+}
+
+extension UIButton {
+    func createBorder() {
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 1
+    }
 }

@@ -10,13 +10,13 @@
         <!--Home Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="HomePageViewController" customModule="MagicBookStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomePageViewController" customModule="MagicBookStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop-banner" translatesAutoresizingMaskIntoConstraints="NO" id="4HP-Be-yaA">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="212.66666666666666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="212.66666666666666"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="212.5" id="D23-5t-SpZ"/>
                                 </constraints>
@@ -78,7 +78,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Wpb-lH-XQf" kind="show" id="pDP-xl-T5k"/>
+                                                    <segue destination="ydy-t0-xv7" kind="show" id="U6w-3g-SgZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -109,7 +109,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="mV8-t9-RmR" kind="show" id="pab-iF-pDO"/>
+                                                    <segue destination="Fbo-XG-cQy" kind="show" id="Acp-ct-k86"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -145,6 +145,9 @@
                                     <constraint firstAttribute="height" constant="66" id="yRC-P3-R2U"/>
                                 </constraints>
                                 <state key="normal" image="death-knight"/>
+                                <connections>
+                                    <action selector="aboveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kVA-ED-fIL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eg-zk-khh">
                                 <rect key="frame" x="20" y="131.66666666666666" width="42" height="66"/>
@@ -153,6 +156,9 @@
                                     <constraint firstAttribute="width" constant="42" id="uoP-jE-GXd"/>
                                 </constraints>
                                 <state key="normal" image="bugbear"/>
+                                <connections>
+                                    <action selector="belowButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SUO-XG-3Ax"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -172,58 +178,139 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="eNv-D2-oNS"/>
+                    <connections>
+                        <outlet property="moneyLabel" destination="EiR-xT-Jkc" id="XRZ-dR-2h3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="136.95652173913044"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="fXt-cm-EU2">
+        <!--魔法列表-->
+        <scene sceneID="8ck-Zw-Jg2">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="mV8-t9-RmR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="E9F-gf-gaU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                <viewController id="tjn-hS-9Gw" customClass="MagicListViewController" customModule="MagicBookStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dcN-94-1YI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="pYF-aC-YBp"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="q6F-TF-cGF" appends="YES" id="C5e-p0-ThL"/>
-                        </connections>
+                        <viewLayoutGuide key="safeArea" id="eYK-a8-s3p"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xIs-d6-eQ8"/>
+                    <navigationItem key="navigationItem" title="魔法列表" id="wfi-0Q-cvQ"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vue-OT-e3T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="q6F-TF-cGF">
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="3Jb-KK-VzT"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y34-Qh-Zcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="424"/>
+            <point key="canvasLocation" x="1790" y="474"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="wAm-2K-fdB">
+        <!--商店列表-->
+        <scene sceneID="Rpk-B8-FTM">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Wpb-lH-XQf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ljO-QR-4Ba">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                <viewController id="G4v-9t-asd" customClass="StorePageViewController" customModule="MagicBookStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fmc-Vk-2YM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Iu9-v8-Ctd"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="kJ0-fj-ReP" appends="YES" id="GEo-qT-v6V"/>
-                        </connections>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Eun-Ri-I6r">
+                                <rect key="frame" x="0.0" y="56" width="414" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibX-TC-Epk">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="1dU-9Q-Obs"/>
+                                            <constraint firstAttribute="height" constant="80" id="Sol-Md-t9m"/>
+                                        </constraints>
+                                        <state key="normal" title="L1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH4-e6-ehC">
+                                        <rect key="frame" x="89" y="0.0" width="80" height="80"/>
+                                        <state key="normal" title="L2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-e8-I2z">
+                                        <rect key="frame" x="178" y="0.0" width="67" height="80"/>
+                                        <state key="normal" title="L3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IV4-91-ZZ9">
+                                        <rect key="frame" x="254" y="0.0" width="160" height="81"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IV4-91-ZZ9" firstAttribute="width" secondItem="ibX-TC-Epk" secondAttribute="height" multiplier="1:0.5" id="UWn-1p-mVH"/>
+                                    <constraint firstItem="uH4-e6-ehC" firstAttribute="width" secondItem="ibX-TC-Epk" secondAttribute="height" multiplier="1:1" id="k9U-ub-Za7"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Eun-Ri-I6r" firstAttribute="leading" secondItem="qn4-zW-9yf" secondAttribute="leading" id="0e6-op-lmb"/>
+                            <constraint firstItem="Eun-Ri-I6r" firstAttribute="top" secondItem="qn4-zW-9yf" secondAttribute="top" id="BZR-xL-uzV"/>
+                            <constraint firstItem="qn4-zW-9yf" firstAttribute="trailing" secondItem="Eun-Ri-I6r" secondAttribute="trailing" id="rD5-Yp-0kw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qn4-zW-9yf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UMB-qz-QnI"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u5H-z2-J9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="kJ0-fj-ReP">
+                    <navigationItem key="navigationItem" title="商店列表" id="Twx-AT-qVu"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="oHv-V9-TU6"/>
+                        <outlet property="levelOneMagic" destination="ibX-TC-Epk" id="TY1-XT-fEB"/>
                     </connections>
-                </swipeGestureRecognizer>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tee-Fd-bjy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013" y="-363"/>
+            <point key="canvasLocation" x="1789.8550724637682" y="-405.16304347826087"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IcU-c7-PZT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" id="ydy-t0-xv7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="b9b-Mr-wWL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nc9-Dq-2te">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G4v-9t-asd" kind="relationship" relationship="rootViewController" id="i86-TM-4Nn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AgZ-OV-Ogh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="-405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LNP-ro-6jC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fbo-XG-cQy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cw4-8h-QaC"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lvI-yI-XFN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tjn-hS-9Gw" kind="relationship" relationship="rootViewController" id="swM-PC-O5F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rf3-2Z-4FX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="475"/>
         </scene>
     </scenes>
     <resources>
@@ -234,7 +321,4 @@
         <image name="shop-banner" width="694" height="356"/>
         <image name="userWhite" width="99" height="118"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="3Jb-KK-VzT"/>
-    </inferredMetricsTieBreakers>
 </document>
