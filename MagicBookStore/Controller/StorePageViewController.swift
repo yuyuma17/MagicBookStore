@@ -1,5 +1,5 @@
 //
-//  HomePageViewController.swift
+//  StorePageViewController.swift
 //  MagicBookStore
 //
 //  Created by 黃士軒 on 2019/11/4.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class HomePageViewController: UIViewController {
+class StorePageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-
+    
 }

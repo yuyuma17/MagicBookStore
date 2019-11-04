@@ -10,7 +10,7 @@
         <!--Home Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomePageViewController" customModule="MagicBookStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="HomePageViewController" customModule="MagicBookStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,25 +72,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="302" height="48"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWo-xx-aX6">
-                                                <rect key="frame" x="110" y="6" width="82" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="進入商店">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="Wpb-lH-XQf" kind="show" id="pDP-xl-T5k"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="HJm-DF-AGh" firstAttribute="leading" secondItem="AUJ-pn-IXj" secondAttribute="leading" id="3ax-hP-oTY"/>
-                                            <constraint firstAttribute="trailing" secondItem="jWo-xx-aX6" secondAttribute="trailing" constant="110" id="7NX-zB-1pz"/>
+                                            <constraint firstAttribute="trailing" secondItem="jWo-xx-aX6" secondAttribute="trailing" id="7NX-zB-1pz"/>
                                             <constraint firstAttribute="trailing" secondItem="HJm-DF-AGh" secondAttribute="trailing" id="BWp-Bl-uLu"/>
                                             <constraint firstAttribute="height" constant="48" id="E77-S0-wAG"/>
                                             <constraint firstAttribute="width" constant="302" id="VMT-0P-rhe"/>
-                                            <constraint firstItem="jWo-xx-aX6" firstAttribute="top" secondItem="AUJ-pn-IXj" secondAttribute="top" constant="6" id="aww-GA-Rmd"/>
+                                            <constraint firstItem="jWo-xx-aX6" firstAttribute="top" secondItem="AUJ-pn-IXj" secondAttribute="top" id="aww-GA-Rmd"/>
                                             <constraint firstAttribute="bottom" secondItem="HJm-DF-AGh" secondAttribute="bottom" id="ltj-Mq-FSt"/>
                                             <constraint firstItem="HJm-DF-AGh" firstAttribute="top" secondItem="AUJ-pn-IXj" secondAttribute="top" id="rKT-QG-xJd"/>
-                                            <constraint firstItem="jWo-xx-aX6" firstAttribute="leading" secondItem="AUJ-pn-IXj" secondAttribute="leading" constant="110" id="sVb-CY-Y9G"/>
-                                            <constraint firstAttribute="bottom" secondItem="jWo-xx-aX6" secondAttribute="bottom" constant="6" id="xU0-8Q-hzd"/>
+                                            <constraint firstItem="jWo-xx-aX6" firstAttribute="leading" secondItem="AUJ-pn-IXj" secondAttribute="leading" id="sVb-CY-Y9G"/>
+                                            <constraint firstAttribute="bottom" secondItem="jWo-xx-aX6" secondAttribute="bottom" id="xU0-8Q-hzd"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oO-jS-DiM">
@@ -100,25 +103,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="302" height="48"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQH-Bg-Fsw">
-                                                <rect key="frame" x="110" y="6" width="82" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="魔法列表">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="mV8-t9-RmR" kind="show" id="pab-iF-pDO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="lQH-Bg-Fsw" firstAttribute="top" secondItem="0oO-jS-DiM" secondAttribute="top" constant="6" id="6Wq-zp-tCb"/>
+                                            <constraint firstItem="lQH-Bg-Fsw" firstAttribute="top" secondItem="0oO-jS-DiM" secondAttribute="top" id="6Wq-zp-tCb"/>
                                             <constraint firstAttribute="height" constant="48" id="CyE-Kf-8vp"/>
                                             <constraint firstItem="jM8-M9-b5c" firstAttribute="leading" secondItem="0oO-jS-DiM" secondAttribute="leading" id="GVP-Y2-Gl2"/>
                                             <constraint firstAttribute="width" constant="302" id="df6-Gu-dp0"/>
-                                            <constraint firstAttribute="bottom" secondItem="lQH-Bg-Fsw" secondAttribute="bottom" constant="6" id="jge-TE-mnq"/>
+                                            <constraint firstAttribute="bottom" secondItem="lQH-Bg-Fsw" secondAttribute="bottom" id="jge-TE-mnq"/>
                                             <constraint firstItem="jM8-M9-b5c" firstAttribute="top" secondItem="0oO-jS-DiM" secondAttribute="top" id="nxb-J0-3OV"/>
                                             <constraint firstAttribute="trailing" secondItem="jM8-M9-b5c" secondAttribute="trailing" id="qKm-jO-Dyh"/>
                                             <constraint firstAttribute="bottom" secondItem="jM8-M9-b5c" secondAttribute="bottom" id="quA-hu-zC0"/>
-                                            <constraint firstAttribute="trailing" secondItem="lQH-Bg-Fsw" secondAttribute="trailing" constant="110" id="wNX-kK-mYV"/>
-                                            <constraint firstItem="lQH-Bg-Fsw" firstAttribute="leading" secondItem="0oO-jS-DiM" secondAttribute="leading" constant="110" id="zLX-ht-Agu"/>
+                                            <constraint firstAttribute="trailing" secondItem="lQH-Bg-Fsw" secondAttribute="trailing" id="wNX-kK-mYV"/>
+                                            <constraint firstItem="lQH-Bg-Fsw" firstAttribute="leading" secondItem="0oO-jS-DiM" secondAttribute="leading" id="zLX-ht-Agu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -165,10 +171,59 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eNv-D2-oNS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="136.95652173913044"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fXt-cm-EU2">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="mV8-t9-RmR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E9F-gf-gaU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pYF-aC-YBp"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="q6F-TF-cGF" appends="YES" id="C5e-p0-ThL"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="xIs-d6-eQ8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vue-OT-e3T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="q6F-TF-cGF">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="3Jb-KK-VzT"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1012" y="424"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wAm-2K-fdB">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Wpb-lH-XQf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ljO-QR-4Ba">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Iu9-v8-Ctd"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kJ0-fj-ReP" appends="YES" id="GEo-qT-v6V"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="UMB-qz-QnI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u5H-z2-J9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="kJ0-fj-ReP">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="oHv-V9-TU6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1013" y="-363"/>
         </scene>
     </scenes>
     <resources>
@@ -179,4 +234,7 @@
         <image name="shop-banner" width="694" height="356"/>
         <image name="userWhite" width="99" height="118"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Jb-KK-VzT"/>
+    </inferredMetricsTieBreakers>
 </document>

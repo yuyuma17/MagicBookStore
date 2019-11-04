@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		165E067A236FBF3F00E6B9F1 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E0679236FBF3F00E6B9F1 /* HomePageViewController.swift */; };
+		165E067C236FC81C00E6B9F1 /* StorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E067B236FC81C00E6B9F1 /* StorePageViewController.swift */; };
+		165E067E236FC82A00E6B9F1 /* MagicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E067D236FC82A00E6B9F1 /* MagicListViewController.swift */; };
+		165E0682236FC8E200E6B9F1 /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E0681236FC8E200E6B9F1 /* StoreData.swift */; };
 		16A5D9EF236F2B95004A3963 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A5D9EE236F2B95004A3963 /* AppDelegate.swift */; };
 		16A5D9F1236F2B95004A3963 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A5D9F0236F2B95004A3963 /* SceneDelegate.swift */; };
 		16A5D9F6236F2B95004A3963 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A5D9F4236F2B95004A3963 /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		165E0679236FBF3F00E6B9F1 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		165E067B236FC81C00E6B9F1 /* StorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePageViewController.swift; sourceTree = "<group>"; };
+		165E067D236FC82A00E6B9F1 /* MagicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicListViewController.swift; sourceTree = "<group>"; };
+		165E0681236FC8E200E6B9F1 /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		16A5D9EB236F2B95004A3963 /* MagicBookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicBookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A5D9EE236F2B95004A3963 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16A5D9F0236F2B95004A3963 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +43,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		165E067F236FC85800E6B9F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				165E0679236FBF3F00E6B9F1 /* HomePageViewController.swift */,
+				165E067B236FC81C00E6B9F1 /* StorePageViewController.swift */,
+				165E067D236FC82A00E6B9F1 /* MagicListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		165E0680236FC88300E6B9F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16A5D9F4236F2B95004A3963 /* Main.storyboard */,
+				16A5D9F9236F2B96004A3963 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		165E0683236FC8E700E6B9F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				165E0681236FC8E200E6B9F1 /* StoreData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		16A5D9E2236F2B95004A3963 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +91,10 @@
 			children = (
 				16A5D9EE236F2B95004A3963 /* AppDelegate.swift */,
 				16A5D9F0236F2B95004A3963 /* SceneDelegate.swift */,
-				16A5D9F4236F2B95004A3963 /* Main.storyboard */,
-				165E0679236FBF3F00E6B9F1 /* HomePageViewController.swift */,
+				165E0683236FC8E700E6B9F1 /* Model */,
+				165E0680236FC88300E6B9F1 /* View */,
+				165E067F236FC85800E6B9F1 /* Controller */,
 				16A5D9F7236F2B96004A3963 /* Assets.xcassets */,
-				16A5D9F9236F2B96004A3963 /* LaunchScreen.storyboard */,
 				16A5D9FC236F2B96004A3963 /* Info.plist */,
 			);
 			path = MagicBookStore;
@@ -139,6 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				165E067A236FBF3F00E6B9F1 /* HomePageViewController.swift in Sources */,
+				165E067E236FC82A00E6B9F1 /* MagicListViewController.swift in Sources */,
+				165E067C236FC81C00E6B9F1 /* StorePageViewController.swift in Sources */,
+				165E0682236FC8E200E6B9F1 /* StoreData.swift in Sources */,
 				16A5D9EF236F2B95004A3963 /* AppDelegate.swift in Sources */,
 				16A5D9F1236F2B95004A3963 /* SceneDelegate.swift in Sources */,
 			);
