@@ -10,7 +10,7 @@ import UIKit
 
 class HomePageViewController: UIViewController {
     
-    var currentMoney = 500
+    var currentMoney: Int!
     let correctAnswer = [
         true,
         true,
@@ -28,8 +28,8 @@ class HomePageViewController: UIViewController {
                 print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                currentMoney += 100
-                moneyLabel.text = "\(currentMoney)"
+                currentMoney! += 100
+                moneyLabel.text = "$ \(currentMoney!)"
                 return
             }
         }
@@ -39,7 +39,20 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        moneyLabel.text = "\(currentMoney)"
+        
+        // 讀取存的錢
+        if let savedMoney = UserDefaultsWrapper.manager.loadSavedMoney() {
+            currentMoney = savedMoney
+        }
+        
+        moneyLabel.text = "$ \(currentMoney!)"
+    }
+    
+    // 存錢
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UserDefaultsWrapper.manager.save(moneyAmount: currentMoney)
     }
     
     @IBAction func aboveButton(_ sender: UIButton) {
