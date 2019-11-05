@@ -48,11 +48,12 @@ class HomePageViewController: UIViewController {
         moneyLabel.text = "$ \(currentMoney)"
     }
     
-    // 存錢
+    // 存錢及清空密技陣列
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         UserDefaultsWrapper.manager.save(moneyAmount: currentMoney)
+        didInput = [Bool]()
     }
     
     @IBAction func aboveButton(_ sender: UIButton) {

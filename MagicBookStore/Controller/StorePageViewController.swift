@@ -9,11 +9,8 @@
 import UIKit
 
 class StorePageViewController: UIViewController {
-
-    var testArray = ["magic-bolt", "magic-cure-posion", "magic-decrease-weight", "magic-detection"]
-    var testName = ["aa", "bb", "cc", "dd"]
-    var testPrice = ["100", "200", "300", "400"]
     
+    var firstLevelMagics = Skill.firstLevel
     var layoutOption: LayoutOption = .grid
     
     @IBOutlet weak var levelOneMagic: UIButton!
@@ -71,7 +68,7 @@ class StorePageViewController: UIViewController {
 extension StorePageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return firstLevelMagics.count
     }
     
     // 設定 CollectionViewCell
@@ -81,14 +78,14 @@ extension StorePageViewController: UICollectionViewDataSource {
             
         case .list:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as! ListCollectionViewCell
-            cell.skillImage.image = UIImage(named: testArray[indexPath.row])
-            cell.skillName.text = testName[indexPath.row]
-            cell.skillPrice.text = testPrice[indexPath.row]
+            let firstLevelMagic = firstLevelMagics[indexPath.item]
+            cell.setInformation(information: firstLevelMagic)
             return cell
             
         case .grid:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as! GridCollectionViewCell
-            cell.skillImage.image = UIImage(named: testArray[indexPath.row])
+            let firstLevelMagic = firstLevelMagics[indexPath.item]
+            cell.setInformation(information: firstLevelMagic)
             return cell
         }
     }
@@ -103,7 +100,7 @@ extension StorePageViewController: UICollectionViewDelegateFlowLayout {
         switch layoutOption {
             
         case .list:
-            return CGSize(width: 170 , height: 70)
+            return CGSize(width: collectionView.frame.size.width, height: 100)
             
         case .grid:
             return CGSize(width: 80 , height: 80)

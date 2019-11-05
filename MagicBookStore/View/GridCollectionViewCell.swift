@@ -14,7 +14,10 @@ class GridCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func setInformation(information: Skill) {
+        skillImage.image = information.image
     }
 
 }

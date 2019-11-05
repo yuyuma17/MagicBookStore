@@ -16,7 +16,12 @@ class ListCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
+    func setInformation(information: Skill) {
+        skillImage.image = information.image
+        skillName.text = information.name
+        skillPrice.text = "$ \(information.price)"
+    }
+    
 }
