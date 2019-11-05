@@ -10,7 +10,6 @@ import UIKit
 
 class HomePageViewController: UIViewController {
     
-    var currentMoney = 100
     let correctAnswer = [
         true,
         true,
@@ -28,9 +27,8 @@ class HomePageViewController: UIViewController {
                 print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                currentMoney += 100
-                moneyLabel.text = "$ \(currentMoney)"
-                return
+                UserData.money += 100
+                moneyLabel.text = "$ \(UserData.money)"
             }
         }
     }
@@ -40,19 +38,19 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 讀取存的錢
-        if let savedMoney = UserDefaultsWrapper.manager.loadSavedMoney() {
-            currentMoney = savedMoney
-        }
-        
-        moneyLabel.text = "$ \(currentMoney)"
+        moneyLabel.text = "$ \(UserData.money)"
     }
     
-    // 存錢及清空密技陣列
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        UserDefaultsWrapper.manager.save(moneyAmount: currentMoney)
+        moneyLabel.text = "$ \(UserData.money)"
+    }
+    
+    // 清空密技陣列
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
         didInput = [Bool]()
     }
     

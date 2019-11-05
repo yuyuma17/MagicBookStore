@@ -1,16 +1,16 @@
 //
-//  MagicListViewController.swift
+//  List3ViewController.swift
 //  MagicBookStore
 //
-//  Created by 黃士軒 on 2019/11/4.
+//  Created by 黃士軒 on 2019/11/5.
 //  Copyright © 2019 Lacie. All rights reserved.
 //
 
 import UIKit
 
-class MagicListViewController: UIViewController {
-
-    var firstLevelMagics = Skill.firstLevel
+class List3ViewController: UIViewController {
+    
+    var thirdLevelMagics = Skill.thirdLevel
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,7 +19,7 @@ class MagicListViewController: UIViewController {
         
         registerNib()
     }
-
+    
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
@@ -30,32 +30,32 @@ class MagicListViewController: UIViewController {
 }
 
 
-extension MagicListViewController: UICollectionViewDataSource {
+extension List3ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return firstLevelMagics.count
+        return thirdLevelMagics.count
     }
     
     // 設定 CollectionViewCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let firstLevelMagic = firstLevelMagics[indexPath.item]
-            
+        let thirdLevelMagic = thirdLevelMagics[indexPath.item]
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OwnedGridCell", for: indexPath) as! OwnedCollectionViewCell
-         
-        cell.setInformationForOwned(information: firstLevelMagic)
-                
+        
+        cell.setInformationForOwned(information: thirdLevelMagic)
+        
         return cell
     }
 }
 
 
-extension MagicListViewController: UICollectionViewDelegateFlowLayout {
+extension List3ViewController: UICollectionViewDelegateFlowLayout {
     
     //  設定 CollectionViewCell 的寬、高
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            
-            return CGSize(width: collectionView.frame.size.width / 4 , height: 80)
+        
+        return CGSize(width: collectionView.frame.size.width / 4 , height: 80)
     }
 }

@@ -10,11 +10,9 @@ import UIKit
 
 class StorePageViewController: UIViewController {
     
-    var firstLevelMagics = Skill.firstLevel
-    var secondLevelMagics = Skill.secondLevel
-    var thirdLevelMagics = Skill.thirdLevel
     var layoutOption: LayoutOption = .list
     var dataOption: LayoutOption.DataOption = .L1
+    weak var delegate: GetIndexAndDataOption?
     
     @IBOutlet weak var levelOneMagic: UIButton!
     @IBOutlet weak var levelTwoMagic: UIButton!
@@ -24,7 +22,6 @@ class StorePageViewController: UIViewController {
     @IBOutlet weak var currentMoneyView: UIView!
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +34,14 @@ class StorePageViewController: UIViewController {
         detailArrangement.createButtonBorder()
         waterFallArrangement.createButtonBorder()
         currentMoneyView.createViewBorder()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadDataAndMoney), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // 讀取存的錢
-         if let savedMoney = UserDefaultsWrapper.manager.loadSavedMoney() {
-             moneyLabel.text = "$ \(savedMoney)"
-         }
+        moneyLabel.text = "$ \(UserData.money)"
     }
 
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
@@ -77,6 +73,11 @@ class StorePageViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    @objc func reloadDataAndMoney(notification: NSNotification){
+        collectionView.reloadData()
+        moneyLabel.text = "$ \(UserData.money)"
+    }
+    
     private func registerNib() {
         collectionView.register(UINib(nibName: "GridCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GridCell")
         collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ListCell")
@@ -84,8 +85,49 @@ class StorePageViewController: UIViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let buyingVC = storyboard?.instantiateViewController(withIdentifier: "buyingVC")
-        present(buyingVC!, animated: false)
+        if let buyingVC = storyboard?.instantiateViewController(withIdentifier: "buyingVC") as? BuyingViewController {
+            
+            buyingVC.indexPathOfItem = indexPath.item
+            
+            switch dataOption {
+                
+            case .L1:
+                buyingVC.selectedSkillPrice = Skill.firstLevel[indexPath.item].price
+                buyingVC.selectedSkillImage = Skill.firstLevel[indexPath.item].image
+                buyingVC.nowDataOption = .L1
+                delegate?.receiveIndexAndDataOption(index: buyingVC.indexPathOfItem!, optionNow: .L1)
+                
+                if Skill.firstLevel[indexPath.item].haveOwned == true {
+                    return
+                } else {
+                    present(buyingVC, animated: false)
+                }
+                
+            case .L2:
+                buyingVC.selectedSkillPrice = Skill.secondLevel[indexPath.item].price
+                buyingVC.selectedSkillImage = Skill.secondLevel[indexPath.item].image
+                buyingVC.nowDataOption = .L2
+                delegate?.receiveIndexAndDataOption(index: buyingVC.indexPathOfItem!, optionNow: .L2)
+                
+                if Skill.secondLevel[indexPath.item].haveOwned == true {
+                    return
+                } else {
+                    present(buyingVC, animated: false)
+                }
+                
+            case .L3:
+                buyingVC.selectedSkillPrice = Skill.thirdLevel[indexPath.item].price
+                buyingVC.selectedSkillImage = Skill.thirdLevel[indexPath.item].image
+                buyingVC.nowDataOption = .L3
+                delegate?.receiveIndexAndDataOption(index: buyingVC.indexPathOfItem!, optionNow: .L3)
+                
+                if Skill.thirdLevel[indexPath.item].haveOwned == true {
+                    return
+                } else {
+                    present(buyingVC, animated: false)
+                }
+            }
+        }
     }
 }
 
@@ -97,22 +139,18 @@ extension StorePageViewController: UICollectionViewDataSource {
         switch dataOption {
             
         case .L1:
-            return firstLevelMagics.count
+            return Skill.firstLevel.count
             
         case .L2:
-            return secondLevelMagics.count
+            return Skill.secondLevel.count
             
         case .L3:
-            return thirdLevelMagics.count
+            return Skill.thirdLevel.count
         }
     }
     
     // 設定 CollectionViewCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let firstLevelMagic = firstLevelMagics[indexPath.item]
-        let secondLevelMagic = secondLevelMagics[indexPath.item]
-        let thirdLevelMagic = thirdLevelMagics[indexPath.item]
         
         switch layoutOption {
             
@@ -122,13 +160,13 @@ extension StorePageViewController: UICollectionViewDataSource {
             switch dataOption {
                 
             case .L1:
-                cell.setInformation(information: firstLevelMagic)
+                cell.setInformationForShop(information: Skill.firstLevel[indexPath.item])
                 
             case .L2:
-                cell.setInformation(information: secondLevelMagic)
+                cell.setInformationForShop(information: Skill.secondLevel[indexPath.item])
                 
             case .L3:
-                cell.setInformation(information: thirdLevelMagic)
+                cell.setInformationForShop(information: Skill.thirdLevel[indexPath.item])
             }
             
             return cell
@@ -139,13 +177,13 @@ extension StorePageViewController: UICollectionViewDataSource {
             switch dataOption {
                 
             case .L1:
-                cell.setInformationForShop(information: firstLevelMagic)
+                cell.setInformationForShop(information: Skill.firstLevel[indexPath.item])
                 
             case .L2:
-                cell.setInformationForShop(information: secondLevelMagic)
+                cell.setInformationForShop(information: Skill.secondLevel[indexPath.item])
                 
             case .L3:
-                cell.setInformationForShop(information: thirdLevelMagic)
+                cell.setInformationForShop(information: Skill.thirdLevel[indexPath.item])
             }
             
             return cell
@@ -162,10 +200,22 @@ extension StorePageViewController: UICollectionViewDelegateFlowLayout {
         switch layoutOption {
             
         case .list:
-            return CGSize(width: collectionView.frame.size.width, height: 100)
+            return CGSize(width: collectionView.frame.size.width / 2, height: 100)
             
         case .grid:
             return CGSize(width: collectionView.frame.size.width / 4 , height: 100)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        switch layoutOption {
+            
+        case .list:
+            return UIEdgeInsets(top: 15, left: 0, bottom: 30, right: 0)
+            
+        case .grid:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
     }
 }

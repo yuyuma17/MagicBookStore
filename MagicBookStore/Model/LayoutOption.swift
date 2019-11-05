@@ -18,6 +18,6 @@ enum LayoutOption {
         case L1
         case L2
         case L3
+        
     }
-    
 }

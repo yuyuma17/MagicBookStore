@@ -13,15 +13,22 @@ class ListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var skillImage: UIImageView!
     @IBOutlet weak var skillName: UILabel!
     @IBOutlet weak var skillPrice: UILabel!
+    @IBOutlet weak var coverView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    func setInformation(information: Skill) {
+    func setInformationForShop(information: Skill) {
+        
+        if information.haveOwned == true {
+            coverView.isHidden = false
+        } else {
+            coverView.isHidden = true
+        }
+        
         skillImage.image = information.image
         skillName.text = information.name
         skillPrice.text = "$ \(information.price)"
     }
-    
 }

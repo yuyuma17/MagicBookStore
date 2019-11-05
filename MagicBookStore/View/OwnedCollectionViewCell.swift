@@ -1,15 +1,15 @@
 //
-//  GridCollectionViewCell.swift
+//  OwnedCollectionViewCell.swift
 //  MagicBookStore
 //
-//  Created by 黃士軒 on 2019/11/4.
+//  Created by 黃士軒 on 2019/11/5.
 //  Copyright © 2019 Lacie. All rights reserved.
 //
 
 import UIKit
 
-class GridCollectionViewCell: UICollectionViewCell {
-
+class OwnedCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var skillImage: UIImageView!
     @IBOutlet weak var coverView: UIView!
     
@@ -17,12 +17,12 @@ class GridCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setInformationForShop(information: Skill) {
+    func setInformationForOwned(information: Skill) {
         
         if information.haveOwned == true {
-            coverView.isHidden = false
-        } else {
             coverView.isHidden = true
+        } else {
+            coverView.isHidden = false
         }
         
         skillImage.image = information.image

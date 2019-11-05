@@ -14,7 +14,7 @@ struct Skill {
     let name: String
     let price: Int
     let image: UIImage?
-    let haveOwned: Bool
+    var haveOwned: Bool
     
 }
 
