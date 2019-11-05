@@ -11,6 +11,10 @@ import UIKit
 class StorePageViewController: UIViewController {
 
     var testArray = ["magic-bolt", "magic-cure-posion", "magic-decrease-weight", "magic-detection"]
+    var testName = ["aa", "bb", "cc", "dd"]
+    var testPrice = ["100", "200", "300", "400"]
+    
+    var layoutOption: LayoutOption = .grid
     
     @IBOutlet weak var levelOneMagic: UIButton!
     @IBOutlet weak var levelTwoMagic: UIButton!
@@ -47,9 +51,18 @@ class StorePageViewController: UIViewController {
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func changeToListLayout(_ sender: UIButton) {
+        layoutOption = .list
+        collectionView.reloadData()
+    }
+    @IBAction func changeToGridLayout(_ sender: UIButton) {
+        layoutOption = .grid
+        collectionView.reloadData()
+    }
     
     private func registerNib() {
         collectionView.register(UINib(nibName: "GridCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GridCell")
+        collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ListCell")
     }
     
 }
@@ -64,10 +77,20 @@ extension StorePageViewController: UICollectionViewDataSource {
     // 設定 CollectionViewCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as! GridCollectionViewCell
-        cell.skillImage.image = UIImage(named: testArray[indexPath.row])
-        
-        return cell
+        switch layoutOption {
+            
+        case .list:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as! ListCollectionViewCell
+            cell.skillImage.image = UIImage(named: testArray[indexPath.row])
+            cell.skillName.text = testName[indexPath.row]
+            cell.skillPrice.text = testPrice[indexPath.row]
+            return cell
+            
+        case .grid:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as! GridCollectionViewCell
+            cell.skillImage.image = UIImage(named: testArray[indexPath.row])
+            return cell
+        }
     }
 }
 
@@ -76,7 +99,15 @@ extension StorePageViewController: UICollectionViewDelegateFlowLayout {
     
     //  設定 CollectionViewCell 的寬、高
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80 , height: 80)
+        
+        switch layoutOption {
+            
+        case .list:
+            return CGSize(width: 170 , height: 70)
+            
+        case .grid:
+            return CGSize(width: 80 , height: 80)
+        }
     }
 }
 

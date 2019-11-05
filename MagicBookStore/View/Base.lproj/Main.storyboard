@@ -241,10 +241,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daV-wk-0yn">
                                         <rect key="frame" x="248.33333333333337" y="0.0" width="83" height="60"/>
                                         <state key="normal" image="list-style-1"/>
+                                        <connections>
+                                            <action selector="changeToListLayout:" destination="G4v-9t-asd" eventType="touchUpInside" id="Mbk-K8-fc5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AP0-TY-OcB">
                                         <rect key="frame" x="331.33333333333331" y="0.0" width="82.666666666666686" height="60"/>
                                         <state key="normal" image="list-sytle-2"/>
+                                        <connections>
+                                            <action selector="changeToGridLayout:" destination="G4v-9t-asd" eventType="touchUpInside" id="5dX-v5-1fc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
