@@ -81,6 +81,12 @@ class StorePageViewController: UIViewController {
         collectionView.register(UINib(nibName: "GridCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GridCell")
         collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ListCell")
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let buyingVC = storyboard?.instantiateViewController(withIdentifier: "buyingVC")
+        present(buyingVC!, animated: false)
+    }
 }
 
 
@@ -159,7 +165,7 @@ extension StorePageViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.size.width, height: 100)
             
         case .grid:
-            return CGSize(width: 80 , height: 80)
+            return CGSize(width: collectionView.frame.size.width / 4 , height: collectionView.frame.size.height / 4 - 50)
         }
     }
 }

@@ -19,6 +19,7 @@
 		16A5D9F6236F2B95004A3963 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A5D9F4236F2B95004A3963 /* Main.storyboard */; };
 		16A5D9F8236F2B96004A3963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A5D9F7236F2B96004A3963 /* Assets.xcassets */; };
 		16A5D9FB236F2B96004A3963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A5D9F9236F2B96004A3963 /* LaunchScreen.storyboard */; };
+		16BF9E7E23714095003B15CA /* BuyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF9E7D23714095003B15CA /* BuyingViewController.swift */; };
 		16C07ECC2371027E008F6F03 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C07ECA2371027E008F6F03 /* ListCollectionViewCell.swift */; };
 		16C07ECD2371027E008F6F03 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C07ECB2371027E008F6F03 /* ListCollectionViewCell.xib */; };
 		16C07ECF23710595008F6F03 /* LayoutOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C07ECE23710595008F6F03 /* LayoutOption.swift */; };
@@ -39,6 +40,7 @@
 		16A5D9F7236F2B96004A3963 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16A5D9FA236F2B96004A3963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16A5D9FC236F2B96004A3963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16BF9E7D23714095003B15CA /* BuyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyingViewController.swift; sourceTree = "<group>"; };
 		16C07ECA2371027E008F6F03 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		16C07ECB2371027E008F6F03 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		16C07ECE23710595008F6F03 /* LayoutOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutOption.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				165E0679236FBF3F00E6B9F1 /* HomePageViewController.swift */,
 				165E067B236FC81C00E6B9F1 /* StorePageViewController.swift */,
 				165E067D236FC82A00E6B9F1 /* MagicListViewController.swift */,
+				16BF9E7D23714095003B15CA /* BuyingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				165E067E236FC82A00E6B9F1 /* MagicListViewController.swift in Sources */,
 				165E067C236FC81C00E6B9F1 /* StorePageViewController.swift in Sources */,
 				163CCEEE237058EC00B10C3E /* GridCollectionViewCell.swift in Sources */,
+				16BF9E7E23714095003B15CA /* BuyingViewController.swift in Sources */,
 				165E0682236FC8E200E6B9F1 /* StoreData.swift in Sources */,
 				16A5D9EF236F2B95004A3963 /* AppDelegate.swift in Sources */,
 				16A5D9F1236F2B95004A3963 /* SceneDelegate.swift in Sources */,

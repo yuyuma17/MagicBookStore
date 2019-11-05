@@ -10,25 +10,45 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridCell" id="gTV-IL-0wX" customClass="GridCollectionViewCell" customModule="MagicBookStore" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReJ-Fr-SEG">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yle-7l-z8j">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVv-x0-nGM">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOLD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGi-pR-oy2">
+                                        <rect key="frame" x="11.5" y="32" width="77.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="iGi-pR-oy2" firstAttribute="centerY" secondItem="yVv-x0-nGM" secondAttribute="centerY" id="6Jy-1z-Bcn"/>
+                                    <constraint firstItem="iGi-pR-oy2" firstAttribute="centerX" secondItem="yVv-x0-nGM" secondAttribute="centerX" id="bc4-vK-wHv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Yle-7l-z8j" firstAttribute="leading" secondItem="ReJ-Fr-SEG" secondAttribute="leading" id="C8B-Sx-Nef"/>
                             <constraint firstAttribute="trailing" secondItem="Yle-7l-z8j" secondAttribute="trailing" id="DPc-iJ-X2i"/>
                             <constraint firstAttribute="bottom" secondItem="Yle-7l-z8j" secondAttribute="bottom" id="I1h-Zo-uUm"/>
+                            <constraint firstItem="yVv-x0-nGM" firstAttribute="top" secondItem="ReJ-Fr-SEG" secondAttribute="top" id="eNV-Gu-dmh"/>
                             <constraint firstItem="Yle-7l-z8j" firstAttribute="top" secondItem="ReJ-Fr-SEG" secondAttribute="top" id="oCR-g9-wq9"/>
+                            <constraint firstItem="yVv-x0-nGM" firstAttribute="leading" secondItem="ReJ-Fr-SEG" secondAttribute="leading" id="pJP-wL-8vW"/>
+                            <constraint firstAttribute="bottom" secondItem="yVv-x0-nGM" secondAttribute="bottom" id="rAY-yl-ghA"/>
+                            <constraint firstAttribute="trailing" secondItem="yVv-x0-nGM" secondAttribute="trailing" id="s2T-0V-sCr"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -41,6 +61,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="coverView" destination="yVv-x0-nGM" id="2ta-f4-VYa"/>
                 <outlet property="skillImage" destination="Yle-7l-z8j" id="PWJ-m3-onA"/>
             </connections>
             <point key="canvasLocation" x="176.81159420289856" y="148.66071428571428"/>

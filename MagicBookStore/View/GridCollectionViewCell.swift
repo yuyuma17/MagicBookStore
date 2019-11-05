@@ -11,12 +11,18 @@ import UIKit
 class GridCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var skillImage: UIImageView!
+    @IBOutlet weak var coverView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func setInformation(information: Skill) {
+        if information.haveOwned == true {
+            coverView.isHidden = false
+        } else {
+            coverView.isHidden = true
+        }
         skillImage.image = information.image
     }
 
