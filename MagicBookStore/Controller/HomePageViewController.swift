@@ -10,7 +10,7 @@ import UIKit
 
 class HomePageViewController: UIViewController {
     
-    var currentMoney: Int!
+    var currentMoney = 100
     let correctAnswer = [
         true,
         true,
@@ -28,8 +28,8 @@ class HomePageViewController: UIViewController {
                 print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                currentMoney! += 100
-                moneyLabel.text = "$ \(currentMoney!)"
+                currentMoney += 100
+                moneyLabel.text = "$ \(currentMoney)"
                 return
             }
         }
@@ -45,7 +45,7 @@ class HomePageViewController: UIViewController {
             currentMoney = savedMoney
         }
         
-        moneyLabel.text = "$ \(currentMoney!)"
+        moneyLabel.text = "$ \(currentMoney)"
     }
     
     // 存錢

@@ -14,5 +14,8 @@ class MagicListViewController: UIViewController {
         super.viewDidLoad()
     }
 
-
+    @IBAction func backToHome(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

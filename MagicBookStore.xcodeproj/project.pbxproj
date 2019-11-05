@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		163CCEEB23703D3400B10C3E /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CCEEA23703D3400B10C3E /* UserDefault.swift */; };
+		163CCEEE237058EC00B10C3E /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CCEEC237058EC00B10C3E /* GridCollectionViewCell.swift */; };
+		163CCEEF237058EC00B10C3E /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 163CCEED237058EC00B10C3E /* GridCollectionViewCell.xib */; };
 		165E067A236FBF3F00E6B9F1 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E0679236FBF3F00E6B9F1 /* HomePageViewController.swift */; };
 		165E067C236FC81C00E6B9F1 /* StorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E067B236FC81C00E6B9F1 /* StorePageViewController.swift */; };
 		165E067E236FC82A00E6B9F1 /* MagicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E067D236FC82A00E6B9F1 /* MagicListViewController.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		163CCEEA23703D3400B10C3E /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		163CCEEC237058EC00B10C3E /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		163CCEED237058EC00B10C3E /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
 		165E0679236FBF3F00E6B9F1 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		165E067B236FC81C00E6B9F1 /* StorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePageViewController.swift; sourceTree = "<group>"; };
 		165E067D236FC82A00E6B9F1 /* MagicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicListViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 			children = (
 				16A5D9F4236F2B95004A3963 /* Main.storyboard */,
 				16A5D9F9236F2B96004A3963 /* LaunchScreen.storyboard */,
+				163CCEEC237058EC00B10C3E /* GridCollectionViewCell.swift */,
+				163CCEED237058EC00B10C3E /* GridCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163CCEEF237058EC00B10C3E /* GridCollectionViewCell.xib in Resources */,
 				16A5D9FB236F2B96004A3963 /* LaunchScreen.storyboard in Resources */,
 				16A5D9F8236F2B96004A3963 /* Assets.xcassets in Resources */,
 				16A5D9F6236F2B95004A3963 /* Main.storyboard in Resources */,
@@ -178,6 +185,7 @@
 				163CCEEB23703D3400B10C3E /* UserDefault.swift in Sources */,
 				165E067E236FC82A00E6B9F1 /* MagicListViewController.swift in Sources */,
 				165E067C236FC81C00E6B9F1 /* StorePageViewController.swift in Sources */,
+				163CCEEE237058EC00B10C3E /* GridCollectionViewCell.swift in Sources */,
 				165E0682236FC8E200E6B9F1 /* StoreData.swift in Sources */,
 				16A5D9EF236F2B95004A3963 /* AppDelegate.swift in Sources */,
 				16A5D9F1236F2B95004A3963 /* SceneDelegate.swift in Sources */,
