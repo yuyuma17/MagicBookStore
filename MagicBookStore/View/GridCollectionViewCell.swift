@@ -17,7 +17,7 @@ class GridCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setInformation(information: Skill) {
+    func setInformationForShop(information: Skill) {
         if information.haveOwned == true {
             coverView.isHidden = false
         } else {

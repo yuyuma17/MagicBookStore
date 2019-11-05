@@ -62,8 +62,8 @@
 			children = (
 				165E0679236FBF3F00E6B9F1 /* HomePageViewController.swift */,
 				165E067B236FC81C00E6B9F1 /* StorePageViewController.swift */,
-				165E067D236FC82A00E6B9F1 /* MagicListViewController.swift */,
 				16BF9E7D23714095003B15CA /* BuyingViewController.swift */,
+				165E067D236FC82A00E6B9F1 /* MagicListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

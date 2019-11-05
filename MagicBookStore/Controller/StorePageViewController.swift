@@ -91,7 +91,7 @@ class StorePageViewController: UIViewController {
 
 
 extension StorePageViewController: UICollectionViewDataSource {
-    //
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch dataOption {
@@ -139,13 +139,13 @@ extension StorePageViewController: UICollectionViewDataSource {
             switch dataOption {
                 
             case .L1:
-                cell.setInformation(information: firstLevelMagic)
+                cell.setInformationForShop(information: firstLevelMagic)
                 
             case .L2:
-                cell.setInformation(information: secondLevelMagic)
+                cell.setInformationForShop(information: secondLevelMagic)
                 
             case .L3:
-                cell.setInformation(information: thirdLevelMagic)
+                cell.setInformationForShop(information: thirdLevelMagic)
             }
             
             return cell
@@ -165,7 +165,7 @@ extension StorePageViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.size.width, height: 100)
             
         case .grid:
-            return CGSize(width: collectionView.frame.size.width / 4 , height: collectionView.frame.size.height / 4 - 50)
+            return CGSize(width: collectionView.frame.size.width / 4 , height: 100)
         }
     }
 }
