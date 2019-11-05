@@ -225,18 +225,27 @@
                                         <state key="normal" title="L1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showL1Data:" destination="G4v-9t-asd" eventType="touchUpInside" id="h54-IV-Qqw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH4-e6-ehC">
                                         <rect key="frame" x="82.666666666666671" y="0.0" width="83.000000000000014" height="60"/>
                                         <state key="normal" title="L2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showL2Data:" destination="G4v-9t-asd" eventType="touchUpInside" id="45G-0W-YVf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-e8-I2z">
                                         <rect key="frame" x="165.66666666666666" y="0.0" width="82.666666666666657" height="60"/>
                                         <state key="normal" title="L3">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showL3Data:" destination="G4v-9t-asd" eventType="touchUpInside" id="Wl9-Nb-y6m"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daV-wk-0yn">
                                         <rect key="frame" x="248.33333333333337" y="0.0" width="83" height="60"/>

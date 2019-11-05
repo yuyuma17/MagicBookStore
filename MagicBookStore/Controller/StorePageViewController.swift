@@ -11,7 +11,10 @@ import UIKit
 class StorePageViewController: UIViewController {
     
     var firstLevelMagics = Skill.firstLevel
-    var layoutOption: LayoutOption = .grid
+    var secondLevelMagics = Skill.secondLevel
+    var thirdLevelMagics = Skill.thirdLevel
+    var layoutOption: LayoutOption = .list
+    var dataOption: LayoutOption.DataOption = .L1
     
     @IBOutlet weak var levelOneMagic: UIButton!
     @IBOutlet weak var levelTwoMagic: UIButton!
@@ -48,10 +51,27 @@ class StorePageViewController: UIViewController {
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func showL1Data(_ sender: UIButton) {
+        dataOption = .L1
+        collectionView.reloadData()
+    }
+    
+    @IBAction func showL2Data(_ sender: UIButton) {
+        dataOption = .L2
+        collectionView.reloadData()
+    }
+    
+    @IBAction func showL3Data(_ sender: UIButton) {
+        dataOption = .L3
+        collectionView.reloadData()
+    }
+    
     @IBAction func changeToListLayout(_ sender: UIButton) {
         layoutOption = .list
         collectionView.reloadData()
     }
+    
     @IBAction func changeToGridLayout(_ sender: UIButton) {
         layoutOption = .grid
         collectionView.reloadData()
@@ -61,31 +81,67 @@ class StorePageViewController: UIViewController {
         collectionView.register(UINib(nibName: "GridCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GridCell")
         collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ListCell")
     }
-    
 }
 
 
 extension StorePageViewController: UICollectionViewDataSource {
-    
+    //
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return firstLevelMagics.count
+        
+        switch dataOption {
+            
+        case .L1:
+            return firstLevelMagics.count
+            
+        case .L2:
+            return secondLevelMagics.count
+            
+        case .L3:
+            return thirdLevelMagics.count
+        }
     }
     
     // 設定 CollectionViewCell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let firstLevelMagic = firstLevelMagics[indexPath.item]
+        let secondLevelMagic = secondLevelMagics[indexPath.item]
+        let thirdLevelMagic = thirdLevelMagics[indexPath.item]
+        
         switch layoutOption {
             
         case .list:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as! ListCollectionViewCell
-            let firstLevelMagic = firstLevelMagics[indexPath.item]
-            cell.setInformation(information: firstLevelMagic)
+            
+            switch dataOption {
+                
+            case .L1:
+                cell.setInformation(information: firstLevelMagic)
+                
+            case .L2:
+                cell.setInformation(information: secondLevelMagic)
+                
+            case .L3:
+                cell.setInformation(information: thirdLevelMagic)
+            }
+            
             return cell
             
         case .grid:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as! GridCollectionViewCell
-            let firstLevelMagic = firstLevelMagics[indexPath.item]
-            cell.setInformation(information: firstLevelMagic)
+            
+            switch dataOption {
+                
+            case .L1:
+                cell.setInformation(information: firstLevelMagic)
+                
+            case .L2:
+                cell.setInformation(information: secondLevelMagic)
+                
+            case .L3:
+                cell.setInformation(information: thirdLevelMagic)
+            }
+            
             return cell
         }
     }

@@ -13,4 +13,11 @@ enum LayoutOption {
     case list
     case grid
     
+    enum DataOption {
+        
+        case L1
+        case L2
+        case L3
+    }
+    
 }
