@@ -10,6 +10,7 @@ import UIKit
 
 class ListCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var basicView: UIView!
     @IBOutlet weak var skillImage: UIImageView!
     @IBOutlet weak var skillName: UILabel!
     @IBOutlet weak var skillPrice: UILabel!
@@ -17,6 +18,8 @@ class ListCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        basicView.createViewBorder()
     }
 
     func setInformationForShop(information: Skill) {
